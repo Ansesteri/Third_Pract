@@ -1,6 +1,3 @@
-from distutils.archive_util import make_archive
-
-
 N = int(input())
 students = {}
 marks = 3
