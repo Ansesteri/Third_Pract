@@ -1,12 +1,18 @@
+from distutils.archive_util import make_archive
+
+
 N = int(input())
 students = {}
 marks = 3
-output = []
+marks2 = [0] * marks
+
 for _ in range(N):
     student = input().split()
-    last_name = ""
+    last_name = student[0]
     students[student[0]] = [int(i) for i in student[1:]]
-    avg_mark = sum(students[student[0]]) / marks
-    output.append('%s %.2f' % (last_name, avg_mark))
+    for i in range(marks):
+        marks2[i] += students[last_name][i]
+
 print('-' * 20)
-print(''.join(output))
+avg_marks = (str('%.2f' % (marks2[i]/N)) for i in range(marks))
+print(' '.join(avg_marks))
