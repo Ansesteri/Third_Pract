@@ -1,6 +1,3 @@
-from ast import While
-
-
 stack = []
 
 while True:
